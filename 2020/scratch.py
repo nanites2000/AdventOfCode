@@ -1,19 +1,14 @@
-with open('day5_input.txt') as f:
+with open('day6_input.txt') as f:
     a = f.readlines()
-
-a.sort()
-# for i in a:
-#     print(i,end='')
-
-answer = 'BBBFBBBRRR'
-total = 0
-for index, letter in enumerate(answer[-4::-1]):
-    print(letter, index)
-    if letter == 'B':
-        total += 2**index
-    print(total)
-
-print(total)
-result = 8*total +7
-print(result)
-
+b = ['']
+for line in a:
+    if len(line.strip()) > 0:
+        b[-1] = b[-1] + line.strip()
+    else:
+        b.append('')
+print(b)
+couint = 0
+answer  = []
+for row in b:
+    answer.append(len(set({i for i in row})))
+print(sum(answer))
