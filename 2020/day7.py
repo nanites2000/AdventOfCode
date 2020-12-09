@@ -2,7 +2,7 @@ with open('day7_input.txt') as f:
     a = f.readlines()
 bag_dict = {}
 for row in a:
-    name,baglist = row.split('contain')
+    name, baglist = row.split('contain')
     print(name, baglist)
     name = name.split(' bag')[0]
     bags = baglist.split(',')
